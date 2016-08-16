@@ -1,6 +1,6 @@
-Timer React App
+## Timer React App
 
 App written using React and Webpack, styled with Foundation.
 For learning purposes.
 
-Eduardo Campos 2016
+_Eduardo Campos 2016_
