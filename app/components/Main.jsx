@@ -5,6 +5,7 @@ const Main = props => {
   return (
     <div>
         <Nav />
+        Main.jsx Rendered
         {props.children}
     </div>
   )

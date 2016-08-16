@@ -120,11 +120,11 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//Load foundation
-	__webpack_require__(249);
+	__webpack_require__(250);
 	$(document).foundation();
 
 	// App css
-	__webpack_require__(253);
+	__webpack_require__(254);
 
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRouter.Router,
@@ -27193,6 +27193,7 @@
 	    'div',
 	    null,
 	    _react2.default.createElement(_Nav2.default, null),
+	    'Main.jsx Rendered',
 	    props.children
 	  );
 	};
@@ -27367,6 +27368,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _Clock = __webpack_require__(249);
+
+	var _Clock2 = _interopRequireDefault(_Clock);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27390,11 +27395,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Countdown Component'
-	        )
+	        _react2.default.createElement(_Clock2.default, { totalSeconds: 129 })
 	      );
 	    }
 	  }]);
@@ -27408,13 +27409,91 @@
 /* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(8);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Clock = function (_React$Component) {
+	  _inherits(Clock, _React$Component);
+
+	  function Clock() {
+	    _classCallCheck(this, Clock);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Clock).apply(this, arguments));
+	  }
+
+	  _createClass(Clock, [{
+	    key: 'formatSeconds',
+	    value: function formatSeconds(totalSeconds) {
+	      var seconds = totalSeconds % 60;
+	      var minutes = Math.floor(totalSeconds / 60);
+
+	      if (seconds < 10) {
+	        seconds = '0' + seconds;
+	      }
+
+	      if (minutes < 10) {
+	        minutes = '0' + minutes;
+	      }
+
+	      return minutes + ':' + seconds;
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var totalSeconds = this.props.totalSeconds;
+
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'clock' },
+	        _react2.default.createElement(
+	          'span',
+	          { className: 'clock-text' },
+	          this.formatSeconds(totalSeconds)
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Clock;
+	}(_react2.default.Component);
+
+	Clock.defaultProps = {
+	  totalSeconds: 0
+	};
+	Clock.propTypes = {
+	  totalSeconds: _react2.default.PropTypes.number
+	};
+	exports.default = Clock;
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(250);
+	var content = __webpack_require__(251);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(252)(content, {});
+	var update = __webpack_require__(253)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27431,10 +27510,10 @@
 	}
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(251)();
+	exports = module.exports = __webpack_require__(252)();
 	// imports
 
 
@@ -27445,7 +27524,7 @@
 
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports) {
 
 	/*
@@ -27501,7 +27580,7 @@
 
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -27753,16 +27832,16 @@
 
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(254);
+	var content = __webpack_require__(255);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(252)(content, {});
+	var update = __webpack_require__(253)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27779,15 +27858,15 @@
 	}
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(251)();
+	exports = module.exports = __webpack_require__(252)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".top-bar, .top-bar ul {\n  background-color: #333333; }\n\n.top-bar .menu-text {\n  color: white; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n", ""]);
+	exports.push([module.id, ".top-bar, .top-bar ul {\n  background-color: #333333; }\n\n.top-bar .menu-text {\n  color: white; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n\n.clock {\n  align-items: center;\n  background-color: #B5D0E2;\n  border: 2px solid #2099E8;\n  border-radius: 50%;\n  display: flex;\n  height: 14rem;\n  justify-content: center;\n  margin: 4rem auto;\n  width: 14rem; }\n\n.clock-text {\n  color: white;\n  font-size: 2.25rem;\n  font-weight: 300; }\n", ""]);
 
 	// exports
 
